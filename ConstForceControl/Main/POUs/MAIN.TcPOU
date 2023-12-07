@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="MAIN" Id="{13aa0b6a-1832-4149-b405-c6ea458a212e}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	motor1 : MotorPositionController;
+	motor_param : MotorPositionController.MotorParam;
+	motor_data : MotorPositionController.MotorData;
+	motor_state : MotorPositionController.MotorState;
+	
+	sensor_data : SensorData;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[motor1(motor_axis:= GVL.axis1, motor_param:= motor_param, motor_data=> motor_data, motor_state=> motor_state);]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
